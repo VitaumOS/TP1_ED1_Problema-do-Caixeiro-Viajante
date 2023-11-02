@@ -6,8 +6,12 @@ typedef struct GrafoPonderado;
 GrafoPonderado* alocarGrafo(GrafoPonderado *);
 void desalocarGrafo(GrafoPonderado *);
 GrafoPonderado* leGrafo(GrafoPonderado*);
-int encontraCaminho();
+void encontraCaminho(GrafoPonderado, int*, int*, float*, int);
 void imprimeCaminho();
 
+// Funções auxiliares
+
+float calcula_distancia(GrafoPonderado, int*);
+int caminho_contem_cidade(int*, int, int);
 
 #endif
