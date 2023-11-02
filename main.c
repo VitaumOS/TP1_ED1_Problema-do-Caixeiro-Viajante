@@ -3,7 +3,6 @@
 
 int main(){
 
-    //Adicionar as coisas aqui
 
     return 0;
 }
