@@ -3,18 +3,11 @@
 
 typedef struct GrafoPonderado;
 
-GrafoPonderado* alocarGrafo();
+GrafoPonderado* alocarGrafo(GrafoPonderado *);
 void desalocarGrafo(GrafoPonderado *);
 GrafoPonderado* leGrafo(GrafoPonderado*);
 int encontraCaminho();
 void imprimeCaminho();
-
-
-
-
-
-
-
 
 
 #endif
