@@ -8,14 +8,14 @@ typedef struct{ //Criação da struct
     int **matrizG;
 }GrafoPonderado;
 
-GrafoPonderado * alocarGrafo(int n){ //Aloca dinamicamente a struct
+GrafoPonderado * alocarGrafo(){ //Aloca dinamicamente a struct
 
     GrafoPonderado *gp=malloc(sizeof(GrafoPonderado));
     return gp;
 }
 
 void desalocarGrafo(GrafoPonderado *gp){ //Desaloca dinamicamente a struct
-
+    int n=gp->numCidades;
     for(int i=0; i<n*n; i++)
         free(gp->matrizG[i]);
     free(gp->matrizG);
@@ -23,7 +23,9 @@ void desalocarGrafo(GrafoPonderado *gp){ //Desaloca dinamicamente a struct
     free(gp);
 }
 
-GrafoPonderado *leGrafo(int n, GrafoPonderado *gp){ //Baseado no valor n de cidade, cria-se uma matriz com a cidade de origem, destino e a distância entre elas
+GrafoPonderado *leGrafo(GrafoPonderado *gp){ //Baseado no valor n de cidade, cria-se uma matriz com a cidade de origem, destino e a distância entre elas
+    
+    int n=gp->numCidades;
     gp->matrizG=malloc(n*n*sizeof(int*)); //Aloca a matriz de adjacências n² x 3
     for(int j=0; j<n*n; j++)
         gp->matrizG[j]=malloc(3*sizeof(int));

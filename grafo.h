@@ -5,7 +5,7 @@ typedef struct GrafoPonderado;
 
 GrafoPonderado* alocarGrafo();
 void desalocarGrafo(GrafoPonderado *);
-GrafoPonderado* leGrafo(int, GrafoPonderado*);
+GrafoPonderado* leGrafo(GrafoPonderado*);
 int encontraCaminho();
 void imprimeCaminho();
 
