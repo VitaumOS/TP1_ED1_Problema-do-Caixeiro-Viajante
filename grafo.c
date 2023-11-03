@@ -1,11 +1,8 @@
 #include "grafo.h"
-#include <stdio.h>
-#include <stdlib.h>
-
 
 GrafoPonderado * alocarGrafo(){ //Aloca dinamicamente a struct
-    GrafoPonderado* gp;
-    gp=malloc(sizeof(GrafoPonderado));
+
+    GrafoPonderado *gp=malloc(sizeof(GrafoPonderado));
     return gp;
 }
 
@@ -39,7 +36,7 @@ void imprimeCaminho(int* caminho, int numCidades){
     }
 }
 
-float calcula_distancia(GrafoPonderado grafo, int* caminho){
+float calcula_distancia(GrafoPonderado *grafo, int* caminho){
     float distancia = 0.0;
     for (int i = 0; i < grafo.numCidades; i++){
         if(grafo.matrizG[(caminho[i] * grafo.numCidades) + caminho[i + 1]][2] == 0){

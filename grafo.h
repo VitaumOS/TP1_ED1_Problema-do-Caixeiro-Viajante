@@ -15,7 +15,7 @@ void imprimeCaminho(int*, int numCidades);
 
 // Funções auxiliares
 
-float calcula_distancia(GrafoPonderado, int*);
+float calcula_distancia(GrafoPonderado* , int*);
 int caminho_contem_cidade(int*, int, int);
 
 #endif
