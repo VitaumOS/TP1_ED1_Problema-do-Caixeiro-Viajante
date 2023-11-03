@@ -2,11 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct{ //Criação da struct
+struct grafo{ //Criação da struct
 
     int numCidades;
     int **matrizG;
-}GrafoPonderado;
+};
+
 
 GrafoPonderado * alocarGrafo(GrafoPonderado *gp){ //Aloca dinamicamente a struct
 
