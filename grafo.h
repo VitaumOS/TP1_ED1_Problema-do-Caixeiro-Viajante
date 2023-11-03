@@ -1,12 +1,16 @@
 #ifndef GRAFO_H
 #define GRAFO_H
 
-typedef struct grafo GrafoPonderado;
+typedef struct{ //Criação da struct
 
-GrafoPonderado* alocarGrafo(GrafoPonderado *);
+    int numCidades;
+    int **matrizG;
+} GrafoPonderado;
+
+GrafoPonderado* alocarGrafo();
 void desalocarGrafo(GrafoPonderado *);
 GrafoPonderado* leGrafo(GrafoPonderado*);
-void encontraCaminho(GrafoPonderado, int*, int*, float*, int);
+void encontraCaminho(GrafoPonderado* , int*, int*, int*, int);
 void imprimeCaminho(int*, int numCidades);
 
 // Funções auxiliares
