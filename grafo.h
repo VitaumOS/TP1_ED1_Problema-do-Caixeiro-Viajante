@@ -1,13 +1,21 @@
 #ifndef GRAFO_H
 #define GRAFO_H
 
-typedef struct GrafoPonderado;
+typedef struct{ //Criação da struct
 
-GrafoPonderado* alocarGrafo(GrafoPonderado *);
+    int numCidades;
+    int **matrizG;
+} GrafoPonderado;
+
+GrafoPonderado* alocarGrafo();
 void desalocarGrafo(GrafoPonderado *);
 GrafoPonderado* leGrafo(GrafoPonderado*);
-int encontraCaminho();
-void imprimeCaminho();
+void encontraCaminho(GrafoPonderado* , int*, int*, int*, int);
+void imprimeCaminho(int*, int numCidades);
 
+// Funções auxiliares
+
+float calcula_distancia(GrafoPonderado* , int*);
+int caminho_contem_cidade(int*, int, int);
 
 #endif
