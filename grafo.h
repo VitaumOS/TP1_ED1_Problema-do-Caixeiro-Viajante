@@ -10,7 +10,7 @@ typedef struct{ //Criação da struct
     int **matrizG;
 } GrafoPonderado;
 
-GrafoPonderado* alocarGrafo(GrafoPonderado *);
+GrafoPonderado* alocarGrafo();
 void desalocarGrafo(GrafoPonderado *);
 GrafoPonderado* leGrafo(GrafoPonderado*);
 void encontraCaminho(GrafoPonderado*, int*, int*, float*, int);

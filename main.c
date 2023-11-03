@@ -5,7 +5,7 @@ int main(){
 
     GrafoPonderado *gp;
     
-    gp = alocarGrafo(gp);
+    gp = alocarGrafo();
     gp = leGrafo(gp);
 
     int* caminho = malloc((gp->numCidades + 1) * sizeof(GrafoPonderado));
@@ -22,6 +22,6 @@ int main(){
 
     free(melhor_caminho);
     free(caminho);
-    desalocarGrafo(&gp);
+    desalocarGrafo(gp);
     return 0;
 }

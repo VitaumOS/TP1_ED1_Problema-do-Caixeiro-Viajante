@@ -3,9 +3,9 @@
 
 
 
-GrafoPonderado * alocarGrafo(GrafoPonderado *gp){ //Aloca dinamicamente a struct
+GrafoPonderado * alocarGrafo(){ //Aloca dinamicamente a struct
 
-    gp=malloc(sizeof(GrafoPonderado));
+    GrafoPonderado *gp=malloc(sizeof(GrafoPonderado));
     return gp;
 }
 
