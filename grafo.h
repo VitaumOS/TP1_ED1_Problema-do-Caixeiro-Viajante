@@ -1,7 +1,7 @@
 #ifndef GRAFO_H
 #define GRAFO_H
 
-typedef struct GrafoPonderado;
+typedef struct grafo GrafoPonderado;
 
 GrafoPonderado* alocarGrafo(GrafoPonderado *);
 void desalocarGrafo(GrafoPonderado *);

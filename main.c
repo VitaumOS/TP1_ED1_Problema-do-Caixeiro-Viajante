@@ -7,8 +7,8 @@ int main(){
 
     GrafoPonderado *gp;
 
-    gp=alocarGrafo();
-    gp=leGrafo(&gp);
+    gp=alocarGrafo(gp);
+    gp=leGrafo(gp);
 
     return 0;
 }
