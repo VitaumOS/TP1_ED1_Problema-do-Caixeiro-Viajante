@@ -7,7 +7,7 @@ GrafoPonderado* alocarGrafo(GrafoPonderado *);
 void desalocarGrafo(GrafoPonderado *);
 GrafoPonderado* leGrafo(GrafoPonderado*);
 void encontraCaminho(GrafoPonderado, int*, int*, float*, int);
-void imprimeCaminho();
+void imprimeCaminho(int*, int numCidades);
 
 // Funções auxiliares
 

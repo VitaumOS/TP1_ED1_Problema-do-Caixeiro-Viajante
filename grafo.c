@@ -38,6 +38,12 @@ GrafoPonderado *leGrafo(GrafoPonderado *gp){ //Baseado no valor n de cidade, cri
     return gp;
 }
 
+void imprimeCaminho(int* caminho, int numCidades){
+    for (int i = 0; i < numCidades + 1; i++){
+        printf("%d ", caminho[i]);
+    }
+}
+
 float calcula_distancia(GrafoPonderado grafo, int* caminho){
     float distancia = 0.0;
     for (int i = 0; i < grafo.numCidades - 1; i++){
