@@ -54,7 +54,7 @@ float calcula_distancia(GrafoPonderado grafo, int* caminho){
 
 int caminho_contem_cidade(int* caminho, int posicao, int cidade){
     for (int i = 0; i < posicao; i++){
-        if(caminho[i] = cidade){
+        if(caminho[i] == cidade){
             return 1;
         }
     }
