@@ -6,6 +6,12 @@ GrafoPonderado * alocarGrafo(){ //Aloca dinamicamente a struct
     return gp;
 }
 
+int* alocaCaminho( int n){
+
+    int* caminho = malloc((n + 1) * sizeof(GrafoPonderado));
+    return caminho;
+}
+
 void desalocarGrafo(GrafoPonderado *gp){ //Desaloca dinamicamente a struct
     int n=gp->numCidades;
     for(int i=0; i<n*n; i++)
@@ -30,19 +36,20 @@ GrafoPonderado *leGrafo(GrafoPonderado *gp){ //Baseado no valor n de cidade, cri
     return gp;
 }
 
-void imprimeCaminho(int* caminho, int numCidades){
+void imprimeCaminho(int* caminho, int numCidades, int melhor_distancia){
     for (int i = 0; i < numCidades + 1; i++){
         printf("%d ", caminho[i]);
     }
+    printf("\n%d\n", melhor_distancia);
 }
 
-float calcula_distancia(GrafoPonderado grafo, int* caminho){
-    float distancia = 0.0;
-    for (int i = 0; i < grafo.numCidades; i++){
-        if(grafo.matrizG[(caminho[i] * grafo.numCidades) + caminho[i + 1]][2] == 0){
+int calcula_distancia(GrafoPonderado *grafo, int* caminho){
+    int distancia = 0;
+    for (int i = 0; i < grafo->numCidades; i++){
+        if(grafo->matrizG[(caminho[i] * grafo->numCidades) + caminho[i + 1]][2] == 0){
             distancia += 9999;
         }
-        distancia += grafo.matrizG[(caminho[i] * grafo.numCidades) + caminho[i + 1]][2];
+        distancia += grafo->matrizG[(caminho[i] * grafo->numCidades) + caminho[i + 1]][2];
 
     }
     return distancia;
@@ -60,7 +67,7 @@ int caminho_contem_cidade(int* caminho, int posicao, int cidade){
 void encontraCaminho(GrafoPonderado *grafo, int* caminho, int* melhor_caminho, int* melhor_distancia, int posicao){
     if(posicao == grafo->numCidades){
         caminho[posicao] = caminho[0];
-        int distancia_final = calcula_distancia(*grafo, caminho);
+        int distancia_final = calcula_distancia(grafo, caminho);
         if(distancia_final < *melhor_distancia){
             *melhor_distancia = distancia_final;
             for(int i = 0; i <= grafo->numCidades + 1; i++){
